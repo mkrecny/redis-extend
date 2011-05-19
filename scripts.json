@@ -1,0 +1,5 @@
+{
+ "sintersize":"local inter = redis('sinter', KEYS[1], KEYS[2]); return table.getn(inter)" ,
+ "sdiffsrand":"local diff = redis('sdiff', KEYS[1], KEYS[2]); local req_max = tonumber(ARGV[1]); local max;if req_max > table.getn(diff) then max = table.getn(diff) else max = req_max end;local output = {}; for i=0, max-1 do table.insert(output, table.remove(diff)) end; return output",
+ "srandsubstore":"local subset_size = tonumber(ARGV[1]); for i=0, subset_size-1 do redis('sadd', KEYS[2], redis('srandmember', KEYS[1])) end return {ok='OK'}"
+}
