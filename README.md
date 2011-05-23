@@ -4,7 +4,7 @@ Redis-Extend is a collection of non-native, atomic redis commands that perform s
 If you know lua or are interested in redis, please consider contributing an interesting and useful command - or improve the existing.
 
 ## Usage
-Simply access the command from scripts.json by index. The commands are described below.
+Simply load the command from scripts/ according to 'command.lua'. The commands are described below.
 src/ contains the latest redis scripting branch from http://redis.io.
     
 ## Commands
