@@ -9,8 +9,11 @@ src/ contains the latest redis scripting branch from http://redis.io.
     
 ## Commands
 
-### SINTERCARD key1 key2
+### SINTERSCARD key1 key2
 Get the cardinality/size of the intersection of the two sets residing at 'key1' and 'key2'
+
+### SUNIONSCARD key1 key2
+Get the cardinality/size of the union of the two sets residing at 'key1' and 'key2'
 
 ### SDIFFSRAND key1 key2 rand
 Get a random subset of size 'rand' from the difference of the two sets residing at 'key1' and 'key2'
