@@ -9,6 +9,15 @@ src/ contains the latest redis scripting branch from http://redis.io.
     
 ## Commands
 
+### MHDEL key1 [key2 ...] field
+Remove the same field from several hashes, get the number of values actually removed.
+
+### MHLEN key1 [key2 ...]
+Varadic HLEN.
+
+### MHSET key1 [key2 ... keyN] value1 [value2 ... valueN] field
+Set the same field in several hashes, get the number of fields actually created (not updated).
+
 ### SDIFFSRAND key1 key2 rand
 Get a random subset of size 'rand' from the difference of the two sets residing at 'key1' and 'key2'
 
