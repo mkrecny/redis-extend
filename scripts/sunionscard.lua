@@ -1,2 +1,1 @@
-local inter = redis('sunion', KEYS[1], KEYS[2]) 
-return table.getn(inter)
+return table.getn(redis.call('sunion', KEYS[1], KEYS[2]))
