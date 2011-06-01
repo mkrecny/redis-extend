@@ -7,4 +7,4 @@ function rand_subset(set,max_size)
   end
   return r
 end
-return rand_subset(redis.call("sdiff",unpack(KEYS)),tonumber(ARGV[1]))
+return rand_subset(redis.call(ARGV[1],unpack(KEYS)),tonumber(ARGV[2]))
