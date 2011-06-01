@@ -18,7 +18,7 @@ class ExtendedRedis < Redis
     return if @udp_dir.nil?
     @udp_dir = File.expand_path(@udp_dir)
     names = Dir.chdir(@udp_dir){Dir.glob("*.lua")}
-    names.map!{|x| File.basename(x, ".lua").to_sym}
+    names.map!{|x| File.basename(x,".lua").to_sym}
     names.each do |x|
       @lua_src[x] = IO.read(File.join(@udp_dir,"#{x}.lua"))
     end
