@@ -18,14 +18,14 @@ Varadic HLEN.
 ### MHSET key1 [key2 ... keyN] value1 [value2 ... valueN] field
 Set the same field in several hashes, get the number of fields actually created (not updated).
 
-### SDIFFSRAND key1 key2 rand
-Get a random subset of size 'rand' from the difference of the two sets residing at 'key1' and 'key2'
+### SDIFFSRANDSUBSET key1 [key2 ... keyN] count
+Get a random subset of maximum size 'count' from the difference between the set residing at 'key1' and all the sets residing at 'key2' ... 'keyN'.
 
-### SINTERSCARD key1 key2
-Get the cardinality/size of the intersection of the two sets residing at 'key1' and 'key2'
+### SINTERSCARD key1 [key2 ... keyN]
+Get the cardinality/size of the intersection of the sets residing at 'key1' ... 'keyN'.
 
-### SRANDSUBSTORE source destination subset
-Get a random subset of size  'subset' from the set residing at 'source' and store it in a set residing at 'destination'
+### SRANDSUBSET key count
+Get a random subset of maximum size 'count' from the set residing at 'key'.
 
-### SUNIONSCARD key1 key2
-Get the cardinality/size of the union of the two sets residing at 'key1' and 'key2'
+### SUNIONSCARD key1 [key2 ... keyN]
+Get the cardinality/size of the union of the sets residing at 'key1' ... 'keyN'.
