@@ -1,1 +1,0 @@
-return #redis.call("sunion",unpack(KEYS))

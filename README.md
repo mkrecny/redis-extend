@@ -18,14 +18,8 @@ Varadic HLEN.
 ### MHSET key1 [key2 ... keyN] value1 [value2 ... valueN] field
 Set the same field in several hashes, get the number of fields actually created (not updated).
 
-### SINTERSCARD key1 [key2 ... keyN]
-Get the cardinality/size of the intersection of the sets residing at 'key1' ... 'keyN'.
+### SOPSCARD key1 [key2 ... keyN] operation
+Get the cardinality/size of the set resulting from the 'operation' ('smembers','sinter','sunion') between the sets residing at 'key1' ... 'keyN'.
 
 ### SOPSRANDSUBSET key1 [key2 ... keyN] operation count
-Get a random subset of maximum size 'count' from the 'operation' ('sinter'/'sunion') between the set residing at 'key1' and all the sets residing at 'key2' ... 'keyN'.
-
-### SRANDSUBSET key count
-Get a random subset of maximum size 'count' from the set residing at 'key'.
-
-### SUNIONSCARD key1 [key2 ... keyN]
-Get the cardinality/size of the union of the sets residing at 'key1' ... 'keyN'.
+Get a random subset of maximum size 'count' from the 'operation' ('smembers','sinter','sunion') between the set residing at 'key1' and all the sets residing at 'key2' ... 'keyN'.
