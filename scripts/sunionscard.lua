@@ -1,1 +1,1 @@
-return #redis.call("sunion",KEYS[1],KEYS[2])
+return #redis.call("sunion",unpack(KEYS))

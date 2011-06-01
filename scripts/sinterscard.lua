@@ -1,1 +1,1 @@
-return #redis.call("sinter",KEYS[1],KEYS[2])
+return #redis.call("sinter",unpack(KEYS))
