@@ -35,7 +35,8 @@ RedisExtend.prototype.extend = function(redis_client, commands){
   }
 };
 
-var redis_client = require('../..//harvest/lib/evredis/').createClient();
-r = new RedisExtend();
-r.extend(redis_client);
-redis_client.sissubset(['foo', 'bar'], console.log);
+// Testing
+//var redis_client = require('../..//harvest/lib/evredis/').createClient();
+//r = new RedisExtend();
+//r.extend(redis_client);
+//redis_client.sissubset(['foo', 'bar'], console.log);
