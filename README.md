@@ -22,7 +22,10 @@ Set the same field in several hashes, get the number of fields actually created 
 Determine if the set at 'key2' is a subset of the set at 'key1'
 
 ### SOPSCARD key1 [key2 ... keyN] operation
-Get the cardinality/size of the set resulting from the 'operation' ('smembers','sinter','sunion') between the sets residing at 'key1' ... 'keyN'.
+The cardinality of the set resulting from the 'operation' (smembers/sinter/sunion) between the sets at 'key1' ... 'keyN'.
 
 ### SOPSRANDSUBSET key1 [key2 ... keyN] operation count
-Get a random subset of maximum size 'count' from the 'operation' ('smembers','sinter','sunion') between the set residing at 'key1' and all the sets residing at 'key2' ... 'keyN'.
+A random subset of maximum size 'count' from the 'operation' (smembers/sinter/sunion) between the set at 'key1' and all the sets at 'key2' ... 'keyN'.
+
+### SOPSRANDSUBSTORE key1 [key2 ... keyN] operation count destination
+Store a random subset of maximum size 'count' from the 'operation' (smembers/sinter/sunion) between the set at 'key1' and all the sets at 'key2' ... 'keyN' at a key 'destination'
