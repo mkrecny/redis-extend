@@ -1,1 +1,1 @@
-return redis.call(ARGV[1], unpack(redis.call('keys', ARGV[2])))
+return redis.call(ARGV[2], unpack(redis.call('keys', ARGV[1])))
