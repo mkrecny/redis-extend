@@ -19,7 +19,7 @@ Varadic HLEN.
 Set the same field in several hashes, get the number of fields actually created (not updated).
 
 ### SISSUBSET key1 key2 
-Determine if the set at 'key2' is a subset of the sat at 'key1'
+Determine if the set at 'key2' is a subset of the set at 'key1'
 
 ### SOPSCARD key1 [key2 ... keyN] operation
 Get the cardinality/size of the set resulting from the 'operation' ('smembers','sinter','sunion') between the sets residing at 'key1' ... 'keyN'.
