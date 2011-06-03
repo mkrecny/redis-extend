@@ -1,7 +1,8 @@
 var fs = require('fs');
 
 /*
- * JavaScript redis-extend client
+ * JavaScript redis-extend 'client'
+ * @param scripts_dir : string : location of your lua scripts dir
  */
 
 var RedisExtend = function(scripts_dir){
@@ -14,14 +15,21 @@ var RedisExtend = function(scripts_dir){
   });
 };
 
+/*
+ * Return the script command with name script_name
+ * @param script_name : string : name of the command eg 'sopscard'
+ */
 RedisExtend.prototype.getScript = function(script_name){
   return this.scripts[script_name.toLowerCase()];
 };
 
-RedisExtend.prototype.extend = function(redis_client, commands){
-  var extensions = commands ? commands : this.scripts;  
-  for (var e in extensions){
-    if (extensions.hasOwnProperty(e)){
+/*
+ * Extend the node_redis client object to support redis-extend commands
+ * @param redis_client : object : the redis_client - must be a node_redis client w/ support for eval
+ */
+RedisExtend.prototype.extend = function(redis_client){
+  for (var e in this.scripts){
+    if (this.scripts.hasOwnProperty(e)){
       var script = this.getScript(e);
       (function(s){redis_client[e] = function(keys, argv, callback){
         var args = [];
