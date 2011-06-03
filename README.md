@@ -18,6 +18,9 @@ Varadic HLEN.
 ### MHSET key1 [key2 ... keyN] value1 [value2 ... valueN] field
 Set the same field in several hashes, get the number of fields actually created (not updated).
 
+### PATTERNOP pattern operation
+Perform 'operation' (eg DEL) on all keys matching 'pattern'
+
 ### SISSUBSET key1 key2 
 Determine if the set at 'key2' is a subset of the set at 'key1'
 
