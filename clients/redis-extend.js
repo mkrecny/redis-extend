@@ -6,7 +6,7 @@ var fs = require('fs');
  */
 
 var RedisExtend = function(scripts_dir){
-  this.scripts = {}, self = this, scripts_dir = scripts_dir || '../scripts/';
+  this.scripts = {}, self = this, scripts_dir = scripts_dir || __dirname+'/../scripts/';
 
   var scripts = fs.readdirSync(scripts_dir);
   scripts.forEach(function(s){
@@ -39,6 +39,10 @@ RedisExtend.prototype.extend = function(redis_client){
       };})(script);
     }
   }
+};
+
+exports.create = function(scripts_dir){
+  return new RedisExtend(scripts_dir);
 };
 
 // Examples 
