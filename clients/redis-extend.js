@@ -23,20 +23,20 @@ RedisExtend.prototype.extend = function(redis_client, commands){
   for (var e in extensions){
     if (extensions.hasOwnProperty(e)){
       var script = this.getScript(e);
-
       (function(s){redis_client[e] = function(keys, argv, callback){
         var args = [];
-        args.push(s);
-        args.push(keys.length || 0);
-        args = args.concat(keys, argv); 
-        redis_client.eval.apply(redis_client, args, callback);
+        args.push(s, keys.length || 0);
+        args = args.concat(keys, argv || callback, callback || null); 
+        redis_client.eval.apply(redis_client, args);
       };})(script);
     }
   }
 };
 
-// Testing
-//var redis_client = require('../..//harvest/lib/evredis/').createClient();
+// Examples 
+//var redis_client = require('../../node_redis').createClient();
 //r = new RedisExtend();
 //r.extend(redis_client);
-//redis_client.sissubset(['foo', 'bar'], console.log);
+//redis_client.sissubset(['foo', 'bar'], [], console.log);
+//redis_client.sopscard(['foo'], ['smembers'], console.log);
+//redis_client.sopsrandsubset(['foo', 'bar'], ['sunion', 1], console.log);
