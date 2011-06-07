@@ -9,6 +9,9 @@ src/ contains the latest redis scripting branch from http://redis.io.
     
 ## Commands
 
+### INCRTO key1 [key2 ... keyN] value1 [value2 ... valueN]
+For each pair (keyX,valueX), sets keyX to the maximum between its value and valueX. Returns a multi bulk with the values of key1 ... keyN after the call.
+
 ### MHDEL key1 [key2 ...] field
 Remove the same field from several hashes, get the number of values actually removed.
 
